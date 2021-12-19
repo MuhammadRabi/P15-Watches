@@ -1,0 +1,116 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* =====================
+     start reviews  
+   ===================== */
+.reviews {
+  padding-top: $sectionPadding;
+  padding-bottom: $sectionPadding;
+  .reviews-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .color-box {
+      flex: 0.35;
+      order: 2;
+      height: 450px;
+      background-color: var(--main-color);
+      position: relative;
+      display: flex;
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+      img {
+        position: absolute;
+        top: 60px;
+        left: -60px;
+        width: 100%;
+        left: 100;
+      }
+    }
+    .swiper {
+      flex: 0.35;
+      order: 1;
+      padding-bottom: 50px;
+      @include media-breakpoint-down(md) {
+        flex: 0.75;
+      }
+      .swiper-slide {
+        margin-right: 5px;
+      }
+    }
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+      display: none;
+    }
+
+    .fa-arrow-right:before,
+    .fa-arrow-left:before {
+      font-size: 20px;
+      padding: 5px 10px;
+      background-color: var(--box-color);
+      box-shadow: 0 0 10px var(--border-color);
+    }
+    .fa-arrow-right:before {
+      position: absolute;
+      bottom: -135px;
+      left: -270px;
+    }
+    .fa-arrow-left:before {
+      position: absolute;
+      bottom: -135px;
+      left: 10px;
+    }
+
+    i {
+      color: var(--main-color);
+      box-shadow: 0 0 10px var(--border-color);
+      margin-bottom: 15px;
+    }
+    i:first-of-type {
+      font-size: 32px;
+      padding: 5px 10px;
+      background-color: var(--box-color);
+    }
+
+    article {
+      > p {
+        margin-bottom: var(--mb-24);
+        line-height: 1.4;
+      }
+      .date,
+      .position {
+        text-transform: capitalize;
+        font-size: var(--smaller-font-size);
+      }
+      .date {
+        margin-bottom: var(--mb-24);
+      }
+
+      .review-author {
+        display: flex;
+        align-items: center;
+        padding-bottom: 50px;
+        .name {
+          text-transform: capitalize;
+          margin: 0;
+          font-weight: 700;
+          color: var(--title-color);
+        }
+        img {
+          border-radius: 50%;
+          width: 65px;
+          height: 65px;
+          margin-right: 15px;
+        }
+        .position {
+          font-size: var(--smaller-font-size);
+        }
+      }
+    }
+  }
+}

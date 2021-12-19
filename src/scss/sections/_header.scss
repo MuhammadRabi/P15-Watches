@@ -1,0 +1,78 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* =====================
+start Header
+===================== */
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  &.fixed__header {
+    background-color: var(--body-color);
+    box-shadow: 0 0 10px var(--border-color);
+  }
+
+  .logo {
+    height: 72px;
+    line-height: 72px;
+  }
+
+  nav {
+    margin-left: var(--mb-24);
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+  .nav__list {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .nav__link {
+      padding: 0 20px;
+      font-weight: 500;
+      transition: $mainTransition;
+      color: var(--title-color);
+      &.active,
+      &:hover {
+        color: var(--main-color);
+      }
+    }
+  }
+  .nav-btns {
+    display: flex;
+    margin-left: 50%;
+    @include media-breakpoint-down(lg) {
+      margin-left: 20px;
+    }
+    i {
+      padding-right: 15px;
+      cursor: pointer;
+      color: var(--title-color);
+    }
+    .dark-btns {
+      i:first-of-type {
+        display: block;
+      }
+      i:last-of-type {
+        display: none;
+      }
+      &.active i:first-of-type {
+        display: none;
+      }
+      &.active i:last-of-type {
+        display: block;
+      }
+    }
+  }
+}

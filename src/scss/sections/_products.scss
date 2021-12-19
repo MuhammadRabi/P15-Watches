@@ -1,0 +1,44 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* =====================
+     start products 
+   ===================== */
+.products {
+  padding-top: $sectionPadding;
+  padding-bottom: $sectionPadding;
+  .container {
+    @include media-breakpoint-up(xl) {
+      width: 60%;
+    }
+  }
+  .watch-box {
+    max-width: 250px;
+    padding: 25px 15px 15px;
+    &:hover {
+      padding: 25px 15px 15px;
+    }
+
+    figcaption {
+      span {
+        color: var(--text-color);
+      }
+    }
+  }
+}
+figcaption {
+  .cart-ribbon {
+    background-color: var(--cart-color);
+    display: block;
+    color: #fff;
+    padding: 10px 15px;
+    width: fit-content;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

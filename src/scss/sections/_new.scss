@@ -1,0 +1,42 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* =====================
+     start new arrivals 
+   ===================== */
+.new {
+  padding-top: $sectionPadding;
+  padding-bottom: $sectionPadding;
+  .watch-box {
+    &:hover {
+      background-color: var(--main-color);
+    }
+    &:hover .new-ribbon {
+      background-color: #1f1f1f;
+    }
+    &:hover .price {
+      color: #1f1f1f;
+    }
+    figcaption {
+      span {
+        color: var(--text-color);
+      }
+    }
+  }
+}
+figcaption {
+  .new-ribbon {
+    background-color: var(--main-color);
+    display: block;
+    color: #fff;
+    padding: 10px 15px;
+    width: fit-content;
+    text-transform: uppercase;
+    position: absolute;
+    top: 25px;
+    right: 7px;
+  }
+}

@@ -1,0 +1,55 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* =====================
+     start subscribe
+   ===================== */
+
+.subscribe {
+  .container {
+    background-color: var(--main-color);
+    padding: 100px 50px;
+  }
+
+  .sub-text h2 {
+    font-size: var(--biggest-font-size);
+    color: var(--title-color);
+    padding-right: 15px;
+    letter-spacing: 3px;
+    max-width: 420px;
+  }
+  .sub-input {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    input[type="text"] {
+      background-color: #f0f0f0;
+      padding: 25px;
+      display: block;
+      width: 60%;
+      border: transparent;
+      &::placeholder {
+        text-transform: capitalize;
+      }
+      @include media-breakpoint-down(md) {
+        width: 75%;
+      }
+    }
+    input[type="submit"] {
+      border: transparent;
+      text-transform: uppercase;
+      @include media-breakpoint-down(md) {
+        margin-top: var(--mb-24);
+      }
+    }
+  }
+}

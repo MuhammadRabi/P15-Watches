@@ -1,0 +1,71 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* =====================
+     start feature  
+   ===================== */
+.feature {
+  padding-top: $sectionPadding;
+  padding-bottom: $sectionPadding;
+}
+
+.watch-box {
+  max-width: 330px;
+  background-color: var(--box-color);
+  padding: 25px 15px 1px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  margin: var(--mb-24) auto;
+  position: relative;
+  transition: $mainTransition;
+  overflow: hidden;
+  img {
+    height: 214px;
+  }
+  figcaption {
+    span {
+      color: var(--title-color);
+      font-weight: 500;
+    }
+    .price {
+      display: block;
+      color: var(--main-color);
+      margin-top: 15px;
+      font-weight: 900;
+    }
+    .sale-ribbon,
+    .new-ribbon {
+      position: absolute;
+      display: block;
+      color: #fff;
+      padding: 10px 15px;
+      width: fit-content;
+      text-transform: uppercase;
+    }
+    .sale-ribbon {
+      background-color: var(--main-color);
+      transform: rotate(-90deg);
+      top: 45px;
+      left: -15px;
+    }
+    .button {
+      transform: translateY(25px);
+      opacity: 0;
+      margin: auto;
+      transition: $mainTransition;
+    }
+  }
+  &:hover .button {
+    opacity: 1;
+    margin-bottom: 50px;
+  }
+  &:hover {
+    padding: 25px 25px;
+    box-shadow: 0 12px 32px #3333331a;
+  }
+}

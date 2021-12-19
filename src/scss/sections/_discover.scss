@@ -1,0 +1,50 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* =====================
+     start discover 
+   ===================== */
+.discover {
+  padding-top: $sectionPadding;
+  padding-bottom: $sectionPadding;
+  .discover-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .color-box {
+      flex: 0.35;
+      order: 1;
+      height: 450px;
+      background-color: var(--main-color);
+      position: relative;
+      display: flex;
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+      img {
+        position: absolute;
+        bottom: 60px;
+        right: -60px;
+        width: 100%;
+      }
+    }
+    .article-box {
+      flex: 0.35;
+      order: 2;
+      padding-bottom: 50px;
+      @include media-breakpoint-down(md) {
+        flex: 0.75;
+      }
+      h3 {
+        margin-top: var(--mb-32);
+        color: var(--title-color);
+      }
+      .button {
+        margin-top: var(--mb-24);
+      }
+    }
+  }
+}

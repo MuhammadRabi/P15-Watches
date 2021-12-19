@@ -1,0 +1,72 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* =====================
+       start footer
+   ===================== */
+
+footer {
+  margin-top: $sectionPadding;
+  article {
+    margin: 50px auto;
+    max-width: 250px;
+
+    .list__item {
+      li {
+        margin-bottom: 10px;
+        font-size: var(--smaller-font-size);
+      }
+      a {
+        transition: $mainTransition;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    .social-links {
+      display: flex;
+      i {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .copyrights {
+    font-size: var(--smaller-font-size);
+    text-transform: capitalize;
+    position: relative;
+    margin: 50px auto var(--mb-24);
+    text-align: center;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      top: -40px;
+      left: 0;
+      background-color: var(--border-color);
+    }
+  }
+}
+
+.scroll-to-top {
+  position: fixed;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -100%;
+  right: 45px;
+  color: var(--main-color);
+  background-color: var(--body-color);
+  transition: $mainTransition;
+  cursor: pointer;
+  box-shadow: 0 0 10px 5px var(--border-color);
+  &.show {
+    bottom: 45px;
+  }
+}

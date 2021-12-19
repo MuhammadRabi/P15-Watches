@@ -1,0 +1,80 @@
+// import components scss files
+
+@use "../components/variables" as *;
+@use "../components/breakpoints" as *;
+@use "../components/mixins" as *;
+
+/* =====================
+     start hero area
+   ===================== */
+
+.hero {
+  /*   margin-top: var(--mb-64);
+ */
+  height: 100vh;
+  .hero-img {
+    background-color: var(--main-color);
+    display: flex;
+    padding: 200px 55px 100px;
+    transform: translateY(-20%);
+    z-index: -1;
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+  .hero-content {
+    position: relative;
+    padding: 0 75px;
+    @include media-breakpoint-down(sm) {
+      padding: 0 5px;
+    }
+    @include media-breakpoint-down(lg) {
+      margin-top: 250px;
+    }
+    h1 {
+      color: var(--title-color);
+      font-size: var(--biggest-font-size);
+      font-weight: 900;
+      width: 75%;
+      line-height: 1.2;
+    }
+    .price {
+      display: block;
+      color: var(--main-color);
+      font-size: 24px;
+      font-weight: 500;
+      padding: 20px 0;
+    }
+    .hero-socials {
+      position: absolute;
+      bottom: 145px;
+      left: -100px;
+      display: flex;
+      transform: rotate(-90deg);
+      @include media-breakpoint-between(md, lg) {
+        bottom: 70px;
+        left: -135px;
+      }
+      @include media-breakpoint-between(xs, sm) {
+        display: none;
+      }
+      a {
+        padding-left: 35px;
+        font-size: var(--smaller-font-size);
+        transition: $mainTransition;
+        &:hover {
+          color: var(--text-color-light);
+        }
+      }
+    }
+    .hero-btns {
+      display: flex;
+      align-items: center;
+      a:first-of-type {
+        color: var(--title-color);
+        background-color: var(--button-color-2);
+        height: 50px;
+      }
+    }
+  }
+}
