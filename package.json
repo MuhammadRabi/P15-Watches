@@ -19,7 +19,7 @@
     "gulp-sass": "^5.0.0",
     "gulp-terser": "^2.1.0",
     "postcss": "^8.4.5",
-    "replace": "^1.2.1",
+    "replace": "^1.2.2",
     "sass": "^1.45.0"
   }
 }
